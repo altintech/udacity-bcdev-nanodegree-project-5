@@ -1,4 +1,10 @@
 # ND1309 C2 Ethereum Smart Contracts, Tokens and Dapps - Project Starter 
+
+---
+### NOTE: For the details of the COMPLETED project go to MY-README.md
+
+---
+
 **PROJECT: Decentralized Star Notary Service Project** - For this project, you will create a DApp by adding functionality with your smart contract and deploy it on the public testnet.
 
 ### ToDo
@@ -59,7 +65,7 @@ npm cache clean
 rm package-lock.json
 # initialize npm (you can accept defaults)
 npm init
-# install all modules listed as dependencies in package.json
+# install all modules listed as dependencies in -old.json
 npm install
 ```
 

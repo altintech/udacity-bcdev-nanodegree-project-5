@@ -1,4 +1,9 @@
 /.idea/*
 app/dist
 app/node_modules
-app/pakage-lock.json
+app/package.json
+app/package-lock.json
+/build
+/node_modules
+package.json
+package-lock.json
