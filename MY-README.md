@@ -28,4 +28,8 @@
 3. Checkout the remote "develop" branch by navigating to Git > Branches > Remote Branches > origin/develop > Checkout
 4. Go to the [GitHub repo for this project](https://github.com/altintech/udacity-bcdev-nanodegree-project-5) and choose to Download ZIP under "Code" dropdown green button
 5. Extract the contents of the ZIP file inside the root folder of your IntelliJ IDEA project
-6. Perform the initial commit by navigating to Git > Commit
+6. Perform the initial commit by navigating to Git > Commit and provide some comments before committing
+7. Push the commit to GitHub by navigating to Git > Push
+8. Create Pull request to merge changes from Develop branch to Main branch by navigating to Git > GitHub > Create Pull Request ...
+
+
