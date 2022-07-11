@@ -59,7 +59,7 @@ npm cache clean
 rm package-lock.json
 # initialize npm (you can accept defaults)
 npm init
-# install all modules listed as dependencies in package.json
+# install all modules listed as dependencies in -old.json
 npm install
 ```
 

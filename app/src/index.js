@@ -10,15 +10,15 @@ const App = {
     const { web3 } = this;
 
     try {
-      // get contract instance
+// get contract instance
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = starNotaryArtifact.networks[networkId];
       this.meta = new web3.eth.Contract(
-        starNotaryArtifact.abi,
-        deployedNetwork.address,
+          starNotaryArtifact.abi,
+          deployedNetwork.address,
       );
 
-      // get accounts
+// get accounts
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
     } catch (error) {
@@ -39,9 +39,16 @@ const App = {
     App.setStatus("New Star Owner is " + this.account + ".");
   },
 
-  // Implement Task 4 Modify the front end of the DAPP
-  lookUp: async function (){
-    
+// Implement Task 4 Modify the front end of the DAPP
+  lookUpStar: async function (){
+    const { lookUptokenIdToStarInfo } = this.meta.methods;
+    const id = document.getElementById("lookUpId").value;
+    let starName = await lookUptokenIdToStarInfo(id).call({from: this.account});
+    if(starName !== ""){
+      App.setStatus("Star name is: " + starName + ". Owner of the star is: " + this.account +".");
+    }else{
+      App.setStatus("Could not find star information.");
+    }
   }
 
 };
@@ -50,12 +57,12 @@ window.App = App;
 
 window.addEventListener("load", async function() {
   if (window.ethereum) {
-    // use MetaMask's provider
+// use MetaMask's provider
     App.web3 = new Web3(window.ethereum);
     await window.ethereum.enable(); // get permission to access accounts
   } else {
     console.warn("No web3 detected. Falling back to http://127.0.0.1:9545. You should remove this fallback when you deploy live",);
-    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     App.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"),);
   }
 
